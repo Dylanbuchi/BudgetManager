@@ -79,10 +79,16 @@ public class Menu extends Items {
         userChoice = in.nextLine();
         double value = Double.parseDouble(userChoice);
 
-        list.put(key + " $", value);
-        setList(list);
-        balance -= value;
-        System.out.println("\nPurchase was added!\n");
+        if (getBalance() <= 0) {
+            System.out.println("Sorry you have $0 left");
+
+        } else {
+            list.put(key + " $", value);
+            setList(list);
+            balance -= value;
+            System.out.println("\nPurchase was added!\n");
+
+        }
 
     }
 
@@ -104,6 +110,12 @@ public class Menu extends Items {
         System.out.println("3) Show list of purchases ");
         System.out.println("4) Balance ");
         System.out.println("0) Exit ");
+
+    }
+
+    public void showBalance() {
+
+        System.out.println("Balance: $" + getBalance());
 
     }
 }

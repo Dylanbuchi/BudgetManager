@@ -19,6 +19,7 @@ public class Items {
     protected Map<String, Double> list;
 
     public Items() {
+
         this.income = 0;
         this.purchase = 0;
         this.balance = 0;
@@ -41,16 +42,10 @@ public class Items {
      */
     public double getBalance() {
         if (this.balance <= 0) {
-            return 0;
+            return this.balance = 0;
 
         }
         return this.balance;
-    }
-
-    public void showBalance() {
-
-        System.out.println("Balance: $" + getBalance());
-
     }
 
     /**
